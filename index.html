@@ -5,16 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio del Grupo G</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #1a1a2e;
             color: white;
             text-align: center;
-            padding: 20px;
         }
-        h1 {
-            color: #e94560;
+
+        .banner {
+            background: url('https://source.unsplash.com/1600x900/?technology,code') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
+
         .container {
             max-width: 800px;
             margin: auto;
@@ -22,31 +36,61 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            margin-top: -40px;
         }
-        a {
-            color: #00adb5;
+
+        h1 {
+            color: #e94560;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .github-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .github-links a {
+            background: #00adb5;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
         }
-        a:hover {
-            color: #ff2e63;
+
+        .github-links a:hover {
+            background: #ff2e63;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>¡Bienvenidos al Portafolio del Grupo G!</h1>
-    <p>Somos el <strong>Grupo G</strong> del curso de <strong>Construcción de Software</strong>, ciclo 5, NRC 23731.</p>
-    <p>Explora nuestros proyectos y perfiles en GitHub:</p>
-    <ul style="list-style: none; padding: 0;">
-        <li><a href="https://github.com/gerald122012" target="_blank">gerald122012</a></li>
-        <li><a href="https://github.com/angeltito" target="_blank">angeltito</a></li>
-        <li><a href="https://github.com/Jasimon27" target="_blank">Jasimon27</a></li>
-        <li><a href="https://github.com/Moran3277" target="_blank">Moran3277</a></li>
-        <li><a href="https://github.com/Miguel25-bot" target="_blank">Miguel25-bot</a></li>
-    </ul>
-</div>
+
+    <div class="banner">
+         ¡Bienvenidos al Portafolio del Grupo G! 
+    </div>
+
+    <div class="container">
+        <h1>Grupo G - Construcción de Software</h1>
+        <p>Somos el <strong>Grupo G</strong> del curso de <strong>Construcción de Software</strong>, ciclo 5, NRC 23731.</p>
+        <p>Explora nuestros proyectos y perfiles en GitHub:</p>
+        
+        <div class="github-links">
+            <a href="https://github.com/gerald122012" target="_blank">👨‍💻 Geraldo (gerald122012)</a>
+            <a href="https://github.com/angeltito" target="_blank">👨‍💻 Ángel (angeltito)</a>
+            <a href="https://github.com/Jasimon27" target="_blank">👨‍💻 Jasimon (Jasimon27)</a>
+            <a href="https://github.com/Moran3277" target="_blank">👨‍💻 Moran (Moran3277)</a>
+            <a href="https://github.com/Miguel25-bot" target="_blank">🤖 Miguel (Miguel25-bot)</a>
+        </div>
+    </div>
+
 </body>
 </html>
-
 
