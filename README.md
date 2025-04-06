@@ -18,7 +18,6 @@ Aquí algunos proyectos en los que he trabajado:
 3. **[Proyecto 3](#)** - Breve descripción.
 
 ##  Contáctame
--  **Email:** [tuemail@example.com](mailto:tuemail@example.com)
--  **LinkedIn:** [linkedin.com/in/tuusuario](#)
+-  **Email:** [geraldo_ochito@hotmail.com]
 
 ¡Gracias por visitar mi perfil!
