@@ -1,31 +1,139 @@
-<section>
-  <h2><i class="fas fa-info-circle"></i> Descripción del Proyecto</h2>
-  <p>Este proyecto tiene como objetivo aplicar control de versiones con Git y GitHub, automatización de despliegue con CI/CD, estructura GitFlow, y trabajo colaborativo para el desarrollo de un sitio web profesional que refleje las competencias del equipo.</p>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio Grupo G</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0e1117;
+      color: #e5e7eb;
+    }
+    header {
+      background: linear-gradient(to right, #111827, #1f2937);
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+      color: #38bdf8;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #9ca3af;
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease;
+    }
+    h2 {
+      color: #60a5fa;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    .team, .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .team a, .tools span {
+      background: #1f2937;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #f1f5f9;
+      flex: 1 1 200px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .team a:hover, .tools span:hover {
+      background: #2563eb;
+      transform: scale(1.05);
+    }
+    .button-link {
+      display: inline-block;
+      margin: 25px 10px;
+      padding: 12px 25px;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .button-link:hover {
+      background-color: #1d4ed8;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
 
-<section>
-  <h2><i class="fas fa-users"></i> Integrantes del Equipo</h2>
-  <div class="team">
-    <a href="https://github.com/gerald122012" target="_blank"><i class="fas fa-user-cog"></i> Gerald (gerald122012)</a>
-    <a href="https://github.com/angeltito" target="_blank"><i class="fas fa-paint-brush"></i> Ángel (angeltito)</a>
-    <a href="https://github.com/Jasimon27" target="_blank"><i class="fas fa-database"></i> Jasimon (Jasimon27)</a>
-    <a href="https://github.com/Moran3277" target="_blank"><i class="fas fa-user-tie"></i> Moran (Moran3277)</a>
-    <a href="https://github.com/Miguel25-bot" target="_blank"><i class="fas fa-book"></i> Miguel (Miguel25-bot)</a>
-  </div>
-</section>
+  <header>
+    <h1><i class="fas fa-laptop-code"></i> Portafolio del Grupo G</h1>
+    <p>Evaluación Parcial – Construcción de Software – Ciclo 5 – NRC 23731</p>
+  </header>
 
-<section>
-  <h2><i class="fas fa-tools"></i> Herramientas Utilizadas</h2>
-  <div class="tools">
-    <span><i class="fab fa-github"></i> GitHub</span>
-    <span><i class="fas fa-code-branch"></i> GitFlow</span>
-    <span><i class="fas fa-robot"></i> GitHub Actions</span>
-    <span><i class="fas fa-laptop"></i> HTML & CSS</span>
-    <span><i class="fas fa-check-circle"></i> Commits Semánticos</span>
-  </div>
-</section>
+  <section>
+    <h2><i class="fas fa-info-circle"></i> Descripción del Proyecto</h2>
+    <p>Este proyecto tiene como objetivo aplicar control de versiones con Git y GitHub, automatización de despliegue con CI/CD, estructura GitFlow, y trabajo colaborativo para el desarrollo de un sitio web profesional que refleje las competencias del equipo.</p>
+  </section>
 
-<section style="text-align: center;">
-  <a class="button-link" href="https://github.com/gerald122012/gerald122012.github.io" target="_blank"><i class="fab fa-github"></i> Ver Repositorio</a>
-  <a class="button-link" href="https://gerald122012.github.io/" target="_blank"><i class="fas fa-eye"></i> Ver Sitio Web</a>
-</section>
+  <section>
+    <h2><i class="fas fa-users"></i> Integrantes del Equipo</h2>
+    <div class="team">
+      <a href="https://github.com/gerald122012" target="_blank"><i class="fas fa-user-cog"></i> Gerald (gerald122012)</a>
+      <a href="https://github.com/angeltito" target="_blank"><i class="fas fa-paint-brush"></i> Ángel (angeltito)</a>
+      <a href="https://github.com/Jasimon27" target="_blank"><i class="fas fa-database"></i> Jasimon (Jasimon27)</a>
+      <a href="https://github.com/Moran3277" target="_blank"><i class="fas fa-user-tie"></i> Moran (Moran3277)</a>
+      <a href="https://github.com/Miguel25-bot" target="_blank"><i class="fas fa-book"></i> Miguel (Miguel25-bot)</a>
+    </div>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-tools"></i> Herramientas Utilizadas</h2>
+    <div class="tools">
+      <span><i class="fab fa-github"></i> GitHub</span>
+      <span><i class="fas fa-code-branch"></i> GitFlow</span>
+      <span><i class="fas fa-robot"></i> GitHub Actions</span>
+      <span><i class="fas fa-laptop"></i> HTML & CSS</span>
+      <span><i class="fas fa-check-circle"></i> Commits Semánticos</span>
+    </div>
+  </section>
+
+  <section style="text-align: center;">
+    <a class="button-link" href="https://github.com/gerald122012/gerald122012.github.io" target="_blank"><i class="fab fa-github"></i> Ver Repositorio</a>
+    <a class="button-link" href="https://gerald122012.github.io/" target="_blank"><i class="fas fa-eye"></i> Ver Sitio Web</a>
+  </section>
+
+  <footer>
+    Desarrollado por el Grupo G – Abril 2025 | Diseño interactivo con Font Awesome
+  </footer>
+
+</body>
+</html>
