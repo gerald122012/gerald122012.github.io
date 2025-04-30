@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function () {
-    const orm = new ORM('assets/js/users.json');
+    const orm = new ORM('resources/js/users.json'); // Ruta corregida
     const testResults = document.querySelector('#test-results');
 
     try {
