@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -18,22 +18,19 @@ html, body {
 
 /* Títulos */
 h1, h2 {
-  color: #ffd700;
+  color: #ffffff;
   padding-bottom: 20px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-h1::after, h2::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background: #ffd700;
-  bottom: 10px;
-  left: 0;
+h1::before, h2::before {
+  content: '\f303'; /* Font Awesome icon (pencil) */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #ffd700;
+  margin-right: 10px;
 }
 
 /* Contenedor del formulario */
@@ -53,70 +50,52 @@ h1::after, h2::after {
 
 /* Campos de entrada */
 .input-field {
-  padding: 14px;
+  padding: 15px;
   margin-bottom: 20px;
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
   font-size: 16px;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: border-color 0.3s ease, transform 0.2s ease;
 }
 
 .input-field:focus {
   outline: none;
   border-color: #ffd700;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transform: scale(1.02);
 }
 
-/* Iconos en campos de entrada */
-.input-field::before {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ffd700;
-}
-
-.input-field[name="username"]::before {
-  content: '\f007'; /* Icono de usuario */
-}
-
-.input-field[name="password"]::before {
-  content: '\f023'; /* Icono de candado */
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Botón principal */
 .submit-btn {
-  padding: 14px;
-  background: #ffd700;
-  color: #1e3c72;
+  padding: 15px;
+  background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+  color: #ffffff;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
 .submit-btn::before {
-  content: '\f0a9'; /* Icono de flecha */
+  content: '\f0c7'; /* Font Awesome icon (save) */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
+  margin-right: 8px;
 }
 
 .submit-btn:hover {
-  background: #ffca28;
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
   transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
 /* Mensajes de retroalimentación */
@@ -125,45 +104,84 @@ h1::after, h2::after {
   font-size: 15px;
   font-weight: 600;
   text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.success-message::before {
-  content: '\f00c'; /* Icono de check */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  color: #00e676;
 }
 
 .success-message {
-  color: #00e676;
-}
-
-.error-message::before {
-  content: '\f06a'; /* Icono de alerta */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  color: #ff5252;
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .error-message {
-  color: #ff5252;
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.1);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 /* Resultados de pruebas */
 #orm-results {
-  margin-top: 30px;
+  margin-top: 35px;
   font-size: 16px;
   font-weight: 500;
-  color: #e0e0e0;
-  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
-  border-left: 4px solid #ffd700;
 }
 
 /* Enlaces de acción */
 .action-link {
-  display: inline
+  display: inline-flex;
+  align-items: center;
+  margin: 25px 10px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #00c4ff, #007bff);
+  color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.action-link::before {
+  content: '\f061'; /* Font Awesome icon (arrow-right) */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.action-link:hover {
+  background: linear-gradient(90deg, #00aaff, #005bff);
+  transform: translateY(-3px);
+}
+
+/* Estilos para sección de acceso */
+.access-section a {
+  background: linear-gradient(90deg, #28a745, #34c759);
+}
+
+.access-section a:hover {
+  background: linear-gradient(90deg, #218838, #2ba84a);
+}
+
+/* Animación de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  z-index: -1;
+  animation: pulse 15s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
