@@ -24,33 +24,50 @@ El sistema garantiza un acceso restringido a los contenidos mediante un mecanism
 
 ## 📂 Organización del Proyecto
 
-- `index.html`: Página inicial con información y acceso al sistema.
-- `auth.html`: Interfaz de autenticación con validación ORM.
-- `gallery.html`: Sección protegida, accesible tras autenticación exitosa.
-- `assets/js/authorm.js`: Módulo para cargar datos desde JSON.
-- `assets/js/auth.js`: Lógica de validación de credenciales.
-- `assets/js/projects.json`: Base de datos local de usuarios.
-- `assets/css/design.css`: Estilos unificados con tema oscuro.
-- `tests/auth.test.js`: Pruebas automatizadas para la carga de datos (TDD visual).
+Organización del Proyecto
+index.html: Página principal del sistema. Sirve como punto de entrada general y redirecciona a otras secciones del sitio.
+
+- login.html: Interfaz de autenticación del sistema. Contiene el formulario de inicio de sesión y se vincula con los módulos login.js y orm.js para la validación de credenciales.
+- success.html: Página a la que se accede tras una autenticación exitosa. Representa una sección protegida del sistema.
+- resources/styles.css: Archivo de hojas de estilo (CSS). Aplica el diseño visual del sitio, incluyendo el formulario de autenticación y otros componentes.
+- resources/login.js: Lógica de validación de credenciales. Escucha el formulario de login.html, valida contra los datos del ORM, y redirige si el acceso es exitoso.
+- resources/orm.js: Módulo tipo ORM que permite la carga de datos desde un archivo JSON. Facilita la abstracción de acceso a datos.
+- resources/users.json: Base de datos local en formato JSON. Contiene los registros de usuarios con username y password.
+- test/orm.test.js: Script de pruebas automatizadas para el módulo orm.js. Implementa pruebas bajo enfoque TDD visual o funcional.
+- README.md: Archivo de documentación principal del proyecto. Explica el propósito, estructura y cómo ejecutar o probar el sistema.
+- _conf.yml: Archivo de configuración, posiblemente para uso con Jekyll u otra herramienta de documentación estática (no utilizado directamente por el sistema web).
 
 ---
 
 ## 🔐 Flujo de Autenticación
 
-1. El usuario ingresa a `auth.html`.
-2. `AuthORM.js` carga los datos de `projects.json`.
-3. Se verifican las credenciales ingresadas.
-4. En caso de autenticación exitosa:
-   - Se almacena un token (`authStatus=true`) en `localStorage`.
-   - Se redirige a `gallery.html`.
-5. Si se intenta acceder a contenido protegido sin autenticación:
-   - El sistema redirige automáticamente a `auth.html`.
-
+1 .-Acceso a la página de inicio de sesión :
+El usuario accede a index.html , que actúa como punto de entrada general.
+Desde index.html , se redirige al usuario a login.html , la interfaz de autenticación que contiene el formulario de inicio de sesión.
+2.-Interacción con el formulario de inicio de sesión :
+En login.html , el usuario ingresa sus credenciales (nombre de usuario y contraseña) en el formulario.
+El diseño visual del formulario está definido por resources/styles.css , que garantiza una presentación consistente.
+3.-Validación de credenciales :
+Al enviar el formulario, resources/login.js captura el evento de envío.
+login.js procesa las credenciales ingresadas y las validas contra los datos almacenados en resources/users.json , utilizando resources/orm.js para acceder a los datos.
+orm.js actúa como una capa de abstracción que carga y consulta los registros de usuarios desde el archivo JSON ( users.json ), verificando si las credenciales coinciden con un registro existente.
+4.-Resultado de la autenticación :
+Si las credenciales son válidas, login.js redirige al usuario a Success.html , una página protegida que indica un inicio de sesión exitosa.
+Si las credenciales son inválidas, login.js muestra un mensaje de error en login.html (definido en la lógica del script y estilizado por estilos.css ), solicitando al usuario que intente de nuevo.
+5.-Pruebas y fiabilidad :
+La lógica de acceso a datos en orm.js está probada mediante test/orm.test.js , que asegura que las consultas al archivo JSON sean correctas y confiables bajo un enfoque TDD (desarrollo guiado por pruebas).
+Resumen del flujo :
+- Entrada: index.html → login.html .
+- Interacción: Formulario en login.html captura de credenciales.
+- Procesamiento: login.js valida credenciales usando orm.js contra usuarios.json .
+- Salida: Redirección a Success.html (éxito) o mensaje de error en login.html (fallo).
+  
+Este flujo asegura una autenticación segura y modular, con separación clara entre interfaz, lógica y datos, apoyada por pruebas automatizadas.
 ---
 
 ## 🧬 Aplicación de TDD (Test Driven Development)
 
-- El archivo `tests/auth.test.js` realiza pruebas automáticas sobre `projects.json`.
+- El archivo `test/auth.test.js` realiza pruebas automáticas sobre `orm.test.js`.
 - Los resultados se muestran en la interfaz:
   - ✅ ORM operativo
   - ⚠️ Alerta por problemas detectados
