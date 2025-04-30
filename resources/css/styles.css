@@ -1,168 +1,169 @@
-/* Estilos generales */
+/* Import Google Fonts and Font Awesome for icons */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+/* Estilos generales */
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  background-size: 200% 200%;
-  animation: gradientAnimation 15s ease infinite;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-/* Animación de fondo */
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  overflow-x: hidden;
 }
 
 /* Títulos */
 h1, h2 {
-  color: #40c4ff;
-  padding-bottom: 18px;
+  color: #ffd700;
+  padding-bottom: 20px;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+h1::after, h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #ffd700;
+  bottom: 10px;
+  left: 0;
 }
 
 /* Contenedor del formulario */
 .form-container {
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
   margin: 40px auto;
-  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Campos de entrada */
 .input-field {
   padding: 14px;
-  margin-bottom: 18px;
-  border: 1px solid #444;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
   border-radius: 10px;
-  background: #252525;
-  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .input-field:focus {
   outline: none;
-  border-color: #40c4ff;
-  box-shadow: 0 0 8px rgba(64, 196, 255, 0.3);
+  border-color: #ffd700;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Iconos en campos de entrada */
+.input-field::before {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd700;
+}
+
+.input-field[name="username"]::before {
+  content: '\f007'; /* Icono de usuario */
+}
+
+.input-field[name="password"]::before {
+  content: '\f023'; /* Icono de candado */
 }
 
 /* Botón principal */
 .submit-btn {
   padding: 14px;
-  background: #0288d1;
-  color: #ffffff;
+  background: #ffd700;
+  color: #1e3c72;
   border: none;
   border-radius: 10px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.submit-btn:hover {
-  background: #0277bd;
-  box-shadow: 0 6px 20px rgba(2, 136, 209, 0.5);
-  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .submit-btn::before {
-  content: '\f0c7';
+  content: '\f0a9'; /* Icono de flecha */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  margin-right: 8px;
+}
+
+.submit-btn:hover {
+  background: #ffca28;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-3px);
 }
 
 /* Mensajes de retroalimentación */
 #feedback {
-  margin-top: 18px;
+  margin-top: 20px;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-message::before {
+  content: '\f00c'; /* Icono de check */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #00e676;
 }
 
 .success-message {
-  color: #4caf50;
-  background: rgba(76, 175, 80, 0.1);
-  padding: 10px;
-  border-radius: 8px;
+  color: #00e676;
+}
+
+.error-message::before {
+  content: '\f06a'; /* Icono de alerta */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #ff5252;
 }
 
 .error-message {
-  color: #f44336;
-  background: rgba(244, 67, 54, 0.1);
-  padding: 10px;
-  border-radius: 8px;
+  color: #ff5252;
 }
 
 /* Resultados de pruebas */
 #orm-results {
-  margin-top: 35px;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
-  color: #b0b0b0;
-  background: rgba(255,robot
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #ffd700;
+}
 
 /* Enlaces de acción */
 .action-link {
-  display: inline-block;
-  margin: 25px 10px;
-  padding: 12px 24px;
-  background: #0288d1;
-  color: #ffffff;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.action-link:hover {
-  background: #0277bd;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(2, 136, 209, 0.5);
-}
-
-.action-link::before {
-  content: '\f054';
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  margin-right: 8px;
-}
-
-/* Estilos para sección de acceso */
-.access-section a {
-  background: #4caf50;
-}
-
-.access-section a:hover {
-  background: #43a047;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.5);
-}
-
-.access-section a::before {
-  content: '\f090';
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  margin-right: 8px;
-}
+  display: inline
