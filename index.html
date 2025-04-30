@@ -7,89 +7,173 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0e1117;
-      color: #e5e7eb;
-    }
-    header {
-      background: linear-gradient(to right, #111827, #1f2937);
-      padding: 60px 20px;
-      text-align: center;
-      animation: fadeIn 2s ease;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-      color: #38bdf8;
-    }
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #9ca3af;
-    }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      animation: fadeInUp 1s ease;
-    }
-    h2 {
-      color: #60a5fa;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-    .team, .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
-    }
-    .team a, .tools span {
-      background: #1f2937;
-      padding: 15px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #f1f5f9;
-      flex: 1 1 200px;
-      text-align: center;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .team a:hover, .tools span:hover {
-      background: #2563eb;
-      transform: scale(1.05);
-    }
-    .button-link {
-      display: inline-block;
-      margin: 25px 10px;
-      padding: 12px 25px;
-      background-color: #2563eb;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .button-link:hover {
-      background-color: #1d4ed8;
-      transform: scale(1.05);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #6b7280;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Titles */
+h1, h2 {
+  font-family: 'Georgia', serif;
+  color: #00695c;
+  padding-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+}
+
+/* Add icons before specific titles */
+h2.team-members::before {
+  content: '\f0c0'; /* Font Awesome users icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  color: #00695c;
+  font-size: 1.2em;
+}
+
+h2.tools-used::before {
+  content: '\f7d9'; /* Font Awesome tools icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  color: #00695c;
+  font-size: 1.2em;
+}
+
+/* Form Container */
+.form-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Input Fields */
+.input-field {
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #b0bec5;
+  border-radius: 10px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #00897b;
+  box-shadow: 0 0 8px rgba(0, 137, 123, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 14px;
+  background: #00897b;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #00695c;
+  transform: scale(1.05);
+}
+
+/* Feedback Messages */
+#feedback {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.success-message {
+  color: #2e7d32;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+/* ORM Results */
+#orm-results {
+  margin-top: 35px;
+  font-size: 16px;
+  color: #455a64;
+  background: #eceff1;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Action Links */
+.action-link {
+  display: inline-block;
+  margin: 25px 10px;
+  padding: 12px 25px;
+  background: #00897b;
+  color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.action-link:hover {
+  background: #00695c;
+  transform: translateY(-3px);
+}
+
+/* Access Section */
+.access-section a {
+  background: #2e7d32;
+}
+
+.access-section a:hover {
+  background: #1b5e20;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .input-field, .submit-btn, .action-link {
+    font-size: 14px;
+  }
+}
   </style>
 </head>
 <body>
