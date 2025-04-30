@@ -1,235 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio Grupo G</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Universitario</title>
   <style>
     /* Import Font Awesome for icons */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-/* General Styles */
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
-  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-attachment: fixed;
-}
+    /* General Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
 
-/* Titles */
-h1, h2 {
-  font-family: 'Georgia', serif;
-  color: #00695c;
-  padding-bottom: 15px;
-  font-weight: 700;
-  position: relative;
-}
+    /* Main Container */
+    .main-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-/* Add icons before specific titles */
-h2.team-members::before {
-  content: '\f0c0'; /* Font Awesome users icon */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  margin-right: 10px;
-  color: #00695c;
-  font-size: 1.2em;
-}
+    /* Titles */
+    h1, h2 {
+      font-family: 'Georgia', serif;
+      color: #00695c;
+      padding-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+    }
 
-h2.tools-used::before {
-  content: '\f7d9'; /* Font Awesome tools icon */
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  margin-right: 10px;
-  color: #00695c;
-  font-size: 1.2em;
-}
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-/* Form Container */
-.form-container {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin: 40px auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    h2 {
+      font-size: 1.8em;
+      margin-top: 30px;
+    }
 
-.form-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
+    /* Add icons before specific titles */
+    h2.team-members::before {
+      content: '\f0c0'; /* Font Awesome users icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 10px;
+      color: #00695c;
+      font-size: 1.2em;
+    }
 
-/* Input Fields */
-.input-field {
-  padding: 14px;
-  margin-bottom: 20px;
-  border: 2px solid #b0bec5;
-  border-radius: 10px;
-  background: #f9f9f9;
-  color: #333;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+    h2.tools-used::before {
+      content: '\f7d9'; /* Font Awesome tools icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 10px;
+      color: #00695c;
+      font-size: 1.2em;
+    }
 
-.input-field:focus {
-  outline: none;
-  border-color: #00897b;
-  box-shadow: 0 0 8px rgba(0, 137, 123, 0.3);
-}
+    /* Form Container */
+    .form-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Submit Button */
-.submit-btn {
-  padding: 14px;
-  background: #00897b;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
 
-.submit-btn:hover {
-  background: #00695c;
-  transform: scale(1.05);
-}
+    /* Input Fields */
+    .input-field {
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 2px solid #b0bec5;
+      border-radius: 10px;
+      background: #f9f9f9;
+      color: #333;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Feedback Messages */
-#feedback {
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: 600;
-  text-align: center;
-}
+    .input-field:focus {
+      outline: none;
+      border-color: #00897b;
+      box-shadow: 0 0 8px rgba(0, 137, 123, 0.3);
+    }
 
-.success-message {
-  color: #2e7d32;
-}
+    /* Submit Button */
+    .submit-btn {
+      padding: 14px;
+      background: #00897b;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-.error-message {
-  color: #d32f2f;
-}
+    .submit-btn:hover {
+      background: #00695c;
+      transform: scale(1.05);
+    }
 
-/* ORM Results */
-#orm-results {
-  margin-top: 35px;
-  font-size: 16px;
-  color: #455a64;
-  background: #eceff1;
-  padding: 15px;
-  border-radius: 8px;
-}
+    /* Feedback Messages */
+    #feedback {
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+    }
 
-/* Action Links */
-.action-link {
-  display: inline-block;
-  margin: 25px 10px;
-  padding: 12px 25px;
-  background: #00897b;
-  color: #ffffff;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+    .success-message {
+      color: #2e7d32;
+    }
 
-.action-link:hover {
-  background: #00695c;
-  transform: translateY(-3px);
-}
+    .error-message {
+      color: #d32f2f;
+    }
 
-/* Access Section */
-.access-section a {
-  background: #2e7d32;
-}
+    /* ORM Results */
+    #orm-results {
+      margin-top: 35px;
+      font-size: 16px;
+      color: #455a64;
+      background: #eceff1;
+      padding: 15px;
+      border-radius: 8px;
+    }
 
-.access-section a:hover {
-  background: #1b5e20;
-}
+    /* Action Links */
+    .action-link {
+      display: inline-block;
+      margin: 25px 10px;
+      padding: 12px 25px;
+      background: #00897b;
+      color: #ffffff;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .form-container {
-    padding: 25px;
-    margin: 20px;
-  }
+    .action-link:hover {
+      background: #00695c;
+      transform: translateY(-3px);
+    }
 
-  h1, h2 {
-    font-size: 1.5em;
-  }
+    /* Access Section */
+    .access-section a {
+      background: #2e7d32;
+    }
 
-  .input-field, .submit-btn, .action-link {
-    font-size: 14px;
-  }
-}
+    .access-section a:hover {
+      background: #1b5e20;
+    }
+
+    /* Content Sections */
+    .section {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #455a64;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li {
+      font-size: 16px;
+      color: #455a64;
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '\f058'; /* Font Awesome check-circle icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #00897b;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .main-container {
+        padding: 0 10px;
+      }
+
+      .form-container, .section {
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .input-field, .submit-btn, .action-link {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="main-container">
+    <!-- Project Title -->
+    <h1>Proyecto Universitario</h1>
 
-  <header>
-    <h1><i class="fas fa-laptop-code"></i> Portafolio del Grupo G</h1>
-    <p>Evaluación Parcial – Construcción de Software – Ciclo 5 – NRC 23731</p>
-  </header>
-
-  <section>
-    <h2><i class="fas fa-info-circle"></i> Descripción del Proyecto</h2>
-    <p>Este proyecto tiene como objetivo aplicar control de versiones con Git y GitHub, automatización de despliegue con CI/CD, estructura GitFlow, y trabajo colaborativo para el desarrollo de un sitio web profesional que refleje las competencias del equipo.</p>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-users"></i> Integrantes del Equipo</h2>
-    <div class="team">
-      <a href="https://github.com/gerald122012" target="_blank"><i class="fas fa-user-cog"></i> Gerald (gerald122012)</a>
-      <a href="https://github.com/angeltito" target="_blank"><i class="fas fa-paint-brush"></i> Ángel (angeltito)</a>
-      <a href="https://github.com/Jasimon27" target="_blank"><i class="fas fa-database"></i> Jasimon (Jasimon27)</a>
-      <a href="https://github.com/Moran3277" target="_blank"><i class="fas fa-user-tie"></i> Moran (Moran3277)</a>
-      <a href="https://github.com/Miguel25-bot" target="_blank"><i class="fas fa-book"></i> Miguel (Miguel25-bot)</a>
+    <!-- Project Description -->
+    <div class="section">
+      <h2>Descripción del Proyecto</h2>
+      <p>
+        Este proyecto universitario tiene como objetivo desarrollar una aplicación web interactiva para [describe brevemente el propósito, e.g., gestionar datos, simular procesos, etc.]. La aplicación utiliza tecnologías modernas para garantizar una experiencia de usuario fluida y eficiente.
+      </p>
     </div>
-  </section>
 
-  <section>
-    <h2><i class="fas fa-tools"></i> Herramientas Utilizadas</h2>
-    <div class="tools">
-      <span><i class="fab fa-github"></i> GitHub</span>
-      <span><i class="fas fa-code-branch"></i> GitFlow</span>
-      <span><i class="fas fa-robot"></i> GitHub Actions</span>
-      <span><i class="fas fa-laptop"></i> HTML & CSS</span>
-      <span><i class="fas fa-check-circle"></i> Commits Semánticos</span>
+    <!-- Team Members -->
+    <div class="section">
+      <h2 class="team-members">Integrantes del Equipo</h2>
+      <ul>
+        <li>Nombre 1 - Rol (e.g., Desarrollador Frontend)</li>
+        <li>Nombre 2 - Rol (e.g., Desarrollador Backend)</li>
+        <li>Nombre 3 - Rol (e.g., Diseñador UI/UX)</li>
+      </ul>
     </div>
-  </section>
 
-  <section style="text-align: center;">
-    <a class="button-link" href="https://github.com/gerald122012/gerald122012.github.io" target="_blank">
-      <i class="fab fa-github"></i> Ver Repositorio
-    </a>
-    <a class="button-link" href="https://gerald122012.github.io/" target="_blank">
-      <i class="fas fa-eye"></i> Ver Sitio Web
-    </a>
-    <!-- Aquí está el botón de Iniciar Sesión -->
-    <a class="button-link" href="login.html">
-      <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
-    </a>
-  </section>
+    <!-- Tools Used -->
+    <div class="section">
+      <h2 class="tools-used">Herramientas Utilizadas</h2>
+      <ul>
+        <li>HTML5 - Estructura de la aplicación</li>
+        <li>CSS3 - Estilos y diseño visual</li>
+        <li>JavaScript - Interactividad</li>
+        <li>[Otra herramienta, e.g., Node.js, Git]</li>
+      </ul>
+    </div>
 
-  <footer>
-    Desarrollado por el Grupo G – Abril 2025 | Diseño interactivo con Font Awesome
-  </footer>
+    <!-- Form Section -->
+    <div class="form-container">
+      <h2>Probar la Aplicación</h2>
+      <form>
+        <input type="text" class="input-field" placeholder="Ingrese un valor">
+        <input type="text" class="input-field" placeholder="Otro valor">
+        <button type="submit" class="submit-btn">Enviar</button>
+      </form>
+      <div id="feedback" class="success-message">¡Datos enviados con éxito!</div>
+      <div id="orm-results">Resultados de la prueba aparecerán aquí.</div>
+    </div>
 
-</body>
-</html>
-
-
+    <!-- Action Links -->
+    <div class="section access-section">
+      <h2 huitlalli: true
+      <a href="#" class="action-link">Ver Código en GitHub</a>
+      <a href="#" class="action-link">Documentación</a>
+    </div>
+  </div>
 </body>
 </html>
